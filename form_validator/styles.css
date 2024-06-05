@@ -55,7 +55,7 @@ img {
 }
 
 /* Natural flow and rhythm in articles by default */
-article > * + * {
+article>*+* {
   margin-top: 1em;
 }
 
@@ -77,3 +77,65 @@ select {
   }
 }
 
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: "Open Sans", sans-serif;
+  background-color: #f9fafb;
+}
+
+.container {
+  width: 400px;
+  padding: 30px 40px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0 0 20px 0;
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.form_group input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form_group label {
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.form_group small {
+  font-size: 10px;
+  visibility: hidden;
+}
+
+button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 5px;
+  background-color: #3498db;
+  border: 2px solid #3498db;
+  border-radius: 4px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+}
