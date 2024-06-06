@@ -8,14 +8,16 @@ const passwordConfirm = document.querySelector('#user-password-confirm')
 form.addEventListener('submit', (e) => {
     e.preventDefault()
     checkLength(username, 3, 15)
-    checkLength(password, 6, 25)
     confirmEmail(email)
+    checkLength(password, 6, 25)
+    confirmPasswordMatch(password, passwordConfirm)
 })
 
 function checkLength(input, min, max) {
     if (input.value.trim().length > max || input.value.trim().length < min) {
         const column = input.parentElement.querySelector('label').innerText.trim()
         showError(input, `${column} must be between ${min} - ${max} characters`)
+        console.log(input, max, min)
     } else {
         showSuccess(input)
     }
@@ -48,5 +50,13 @@ function confirmEmail(input) {
         showError(input, `It is a not valid email address.`);
     } else {
         showSuccess(input)
+    }
+}
+
+function confirmPasswordMatch(input, input2) {
+    if (input.value !== input2.value) {
+        showError(input2, `Passwords do not match.`)
+    } else {
+        showSuccess(input2)
     }
 }
