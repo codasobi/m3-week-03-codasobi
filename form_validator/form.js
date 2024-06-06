@@ -23,7 +23,7 @@ function checkLength (input, min, max) {
 function showError (input, msg) {
     const formGroup = input.parentElement
     const Error = formGroup.querySelector("small");
-    // add red border
+    // add red border hint
     input.classList.remove('valid')
     input.classList.add('invalid')
     // show error msg
@@ -34,7 +34,7 @@ function showError (input, msg) {
 function showSuccess (input) {
     const formGroup = input.parentElement
     const Error = formGroup.querySelector("small");
-    // add green border
+    // add green border hint
     input.classList.remove('invalid')
     input.classList.add('valid')
     // hide error msg
