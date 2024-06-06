@@ -124,8 +124,13 @@ h1 {
 }
 
 .form_group small {
-  font-size: 10px;
+  font-size: 14px;
+  color: red;
   visibility: hidden;
+}
+
+.form_group small.invalid {
+  visibility: visible; 
 }
 
 .form_group input.valid {

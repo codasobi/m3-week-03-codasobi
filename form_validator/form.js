@@ -12,14 +12,31 @@ form.addEventListener('submit', (e)=>{
 })
 
 function checkLength (input, min, max) {
-    const formGroup = input.parentElement
-    const ErrorMessage = formGroup.querySelector('small')
     if (input.value.trim().length > max || input.value.trim().length < min) {
-        ErrorMessage.text = `${input.id} should be between ${min} and ${max}`
-        input.classList.remove('valid');
-        input.classList.add('invalid');
+        const column = input.parentElement.querySelector('label').innerText.trim()
+        showError(input, `${column} must be between ${min} - ${max} characters`)
     } else {
-        input.classList.remove('invalid');
-        input.classList.add('valid');
+        showSuccess (input)
     }
+}
+
+function showError (input, msg) {
+    const formGroup = input.parentElement
+    const Error = formGroup.querySelector("small");
+    // add red border
+    input.classList.remove('valid')
+    input.classList.add('invalid')
+    // show error msg
+    Error.innerText = msg
+    Error.classList.add('invalid')
+}
+
+function showSuccess (input) {
+    const formGroup = input.parentElement
+    const Error = formGroup.querySelector("small");
+    // add green border
+    input.classList.remove('invalid')
+    input.classList.add('valid')
+    // hide error msg
+    Error.classList.remove('invalid')
 }
