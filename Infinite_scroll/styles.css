@@ -1,0 +1,136 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article>*+* {
+    margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+:root {
+    --main-blue: #296ca8;
+    --sub-blue: #5b95c8;
+    --main-white: #fff;
+  }  
+
+body {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: "Roboto", sans-serif;
+    background-color: var(--main-blue);
+    color: var(--main-white);
+}
+
+.container {
+    width: 1000px;
+    padding: 30px 40px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+}
+
+input {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+    padding: 20px;
+    outline: none;
+}
+
+.post-container {
+    display: flex;
+    position: relative;
+    margin: 40px 0;
+    padding: 20px;
+    background-color: var(--sub-blue);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border: none;
+}
+
+.number {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    height: 40px;
+    width: 40px;
+    background-color: var(--main-white);
+    text-align: center;
+    padding: 10px;
+    border-radius: 50%;
+    color: var(--main-blue);
+}
