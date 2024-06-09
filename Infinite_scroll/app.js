@@ -2,15 +2,15 @@ let postLimit = 5
 let page = 1
 const filterBar = document.querySelector('#filter-bar')
 
-async function fetchPosts() {
+async function fetchPosts(page) {
     try {
-        let response = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=${postLimit}&_page=${page}`);
+        const url = `https://jsonplaceholder.typicode.com/posts?_limit=${postLimit}&_page=${page}`;
+        const response = await fetch(url);
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`)
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
-
-        let posts = await response.json()
-        renderPosts(posts)
+        const posts = await response.json();
+        return posts;
     } catch (error) {
         console.error('Error fetching posts:', error)
     }
@@ -23,15 +23,27 @@ function renderPosts(data) {
     data.forEach(item => {
         newContent += `
         <div class="post-container">
-            <div class="number">${item.id + 5}</div>
+            <div class="number">${item.id}</div>
             <div class="post-info">
                 <h2 class="post-title">${item.title}</h2>
                 <p class="post-body">${item.body}</p>
             </div>
         </div>`
     })
-    
     container.insertAdjacentHTML('beforeend', newContent)
+}
+
+
+function showLoading () {
+    const loader = document.querySelector('.loader')
+    loader.classList.add('show')
+
+    setTimeout(async ()=>{
+        page++
+        const posts = await fetchPosts(page)
+        renderPosts(posts)
+        loader.classList.remove('show')
+    }, 3000)
 }
 
 
@@ -47,10 +59,15 @@ function filterPost (keyword) {
     })
 }
 
-fetchPosts()
 
 filterBar.addEventListener('input', (e) => {
     const keyword = e.target.value
     filterPost(keyword)
 })
 
+
+window.addEventListener('scroll', ()=> {
+    if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+        showLoading ()
+    }
+})

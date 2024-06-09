@@ -145,6 +145,10 @@ input {
     opacity: 0;
 }
 
+.loader.show {
+    opacity: 1;
+}
+
 .circle {
     width: 10px;
     height: 10px;
