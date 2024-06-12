@@ -95,6 +95,7 @@ body {
 .container {
     width: 1000px;
     padding: 30px 40px;
+    min-height: 100vh;
 }
 
 h1 {

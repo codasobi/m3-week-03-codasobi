@@ -1,5 +1,6 @@
 let postLimit = 5
 let page = 1
+let isLoading = false
 const filterBar = document.querySelector('#filter-bar')
 
 async function fetchPosts(page) {
@@ -35,6 +36,9 @@ function renderPosts(data) {
 
 
 function showLoading () {
+    if (isLoading) return
+
+    isLoading = true
     const loader = document.querySelector('.loader')
     loader.classList.add('show')
 
@@ -43,7 +47,8 @@ function showLoading () {
         const posts = await fetchPosts(page)
         renderPosts(posts)
         loader.classList.remove('show')
-    }, 3000)
+        isLoading = false
+    }, 1000)
 }
 
 
@@ -70,4 +75,10 @@ window.addEventListener('scroll', ()=> {
     if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
         showLoading ()
     }
+})
+
+
+document.addEventListener('DOMContentLoaded', async() =>{
+    const initialPosts = await fetchPosts(page)
+    renderPosts(initialPosts)
 })
