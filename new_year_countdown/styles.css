@@ -78,29 +78,29 @@ select {
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    background: url("./img/new-year.jpg") no-repeat fixed center;
-    background-size: cover;
-    color: #fff;
-    font-family: "Permanent Marker", sans-serif;
-    text-shadow: 2px 2px 2px gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background: url("./img/new-year.jpg") no-repeat fixed center;
+  background-size: cover;
+  color: #fff;
+  font-family: "Permanent Marker", sans-serif;
+  text-shadow: 2px 2px 2px gray;
 }
 
 h1 {
-    font-size: 64px;
-    text-align: center;
+  font-size: 64px;
+  text-align: center;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
 }
 
 .item {
@@ -111,7 +111,11 @@ h1 {
 }
 
 .year {
-    opacity: 0.5;
-    font-size: 200px;
-    text-align: center;
+  opacity: 0.5;
+  font-size: 200px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
 }
