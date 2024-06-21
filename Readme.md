@@ -3,10 +3,10 @@
 
 |  #  |    Project     | Demo |
 | :-: | :------------: | :---: |
-| 01  | 表單標題 | [Demo](https://codasobi.github.io/m3-week-03-codasobi/form_validator/) |
-| 02  | 無限捲動 | [Demo](https://codasobi.github.io/m3-week-03-codasobi/Infinite_scroll/) |
-| 03  | 新年倒數計時 | [Demo](https://codasobi.github.io/m3-week-03-codasobi/new_year_countdown/) |
+| 01  | Form validator | [Demo](https://codasobi.github.io/m3-week-03-codasobi/form_validator/) |
+| 02  | Infinite scroll | [Demo](https://codasobi.github.io/m3-week-03-codasobi/Infinite_scroll/) |
+| 03  | New year countdown新年倒數計時 | [Demo](https://codasobi.github.io/m3-week-03-codasobi/new_year_countdown/) |
 | 04  | FAQ Slider | Demo |
-| 05  | 音樂播放器 | Demo |
-| 06  | 可排序清單 | Demo |
-| 07  | 擴充字 | Demo |
+| 05  | Music player | Demo |
+| 06  | Sortable list | Demo |
+| 07  | Speak number guessing | Demo |
